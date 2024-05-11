@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Labo01
 {
-    public partial class Form3 : Form
+    public partial class MenuPrincipale : Form
     {
-        public Form3()
+        public MenuPrincipale()
         {
             InitializeComponent();
         }
 
         private void bt_Specialite_Click(object sender, EventArgs e)
         {
-            Form2 frmSpecialite = new Form2();
+            Specialite frmSpecialite = new Specialite();
             frmSpecialite.Show();
         }
 

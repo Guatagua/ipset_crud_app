@@ -1,6 +1,6 @@
 ﻿namespace Labo01
 {
-    partial class Form5
+    partial class GestionEtudiant
     {
         /// <summary>
         /// Required designer variable.

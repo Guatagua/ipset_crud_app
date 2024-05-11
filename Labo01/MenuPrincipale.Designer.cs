@@ -1,6 +1,6 @@
 ﻿namespace Labo01
 {
-    partial class Form3
+    partial class MenuPrincipale
     {
         /// <summary>
         /// Required designer variable.
@@ -82,7 +82,7 @@
             this.bt_Exit.UseVisualStyleBackColor = true;
             this.bt_Exit.Click += new System.EventHandler(this.bt_Exit_Click);
             // 
-            // Form3
+            // MenuPrincipale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,10 +92,9 @@
             this.Controls.Add(this.bt_Groupe);
             this.Controls.Add(this.bt_Specialite);
             this.Controls.Add(this.bt_Etudiant);
-            this.Name = "Form3";
+            this.Name = "MenuPrincipale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principale";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

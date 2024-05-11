@@ -7,13 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
 
 namespace Labo01
 {
     public partial class frmLogin : Form
     {
-        OleDbConnection cns = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Razek\OneDrive\Documents\Cours\C Sharp\Labos\Labo01\Labo01\data\dbipset.accdb");
         public frmLogin()
         {
             InitializeComponent();
@@ -39,11 +37,11 @@ namespace Labo01
             Pwd = txt_PWD.Text;
             if(!string.IsNullOrEmpty(Login) && !string.IsNullOrEmpty(Pwd))
             {
-                clLogin login = new clLogin();
+                ClLogin login = new ClLogin();
                 if (login.Authentification(Login, Pwd))
                     {
-                    frm_MenuPrincipale MenuPrincipale = new frm_MenuPrincipale();
-                    MenuPrincipale.Show();
+                    MenuPrincipale MenuP = new MenuPrincipale();
+                    MenuP.Show();
                 }
                 else
                 {
