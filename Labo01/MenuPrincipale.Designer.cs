@@ -43,6 +43,7 @@
             this.bt_Etudiant.TabIndex = 0;
             this.bt_Etudiant.Text = "Etudiant";
             this.bt_Etudiant.UseVisualStyleBackColor = true;
+            this.bt_Etudiant.Click += new System.EventHandler(this.bt_Etudiant_Click);
             // 
             // bt_Specialite
             // 

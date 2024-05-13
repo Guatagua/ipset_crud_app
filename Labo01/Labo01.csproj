@@ -115,11 +115,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Specialite.cs">
+    <Compile Include="frmSpecialite.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Specialite.Designer.cs">
-      <DependentUpon>Specialite.cs</DependentUpon>
+    <Compile Include="frmSpecialite.Designer.cs">
+      <DependentUpon>frmSpecialite.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipale.cs">
       <SubType>Form</SubType>
@@ -138,8 +138,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Specialite.resx">
-      <DependentUpon>Specialite.cs</DependentUpon>
+    <EmbeddedResource Include="frmSpecialite.resx">
+      <DependentUpon>frmSpecialite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipale.resx">
       <DependentUpon>MenuPrincipale.cs</DependentUpon>

@@ -14,7 +14,7 @@ using MySql.Data.MySqlClient;
 namespace Labo01
 {
     
-    public partial class Specialite : Form
+    public partial class frmSpecialite : Form
     {
         public void GetListSpecialite()
         {
@@ -26,7 +26,7 @@ namespace Labo01
             List_Specialite.DataSource = dt;
 
         }
-        public Specialite()
+        public frmSpecialite()
         {
             InitializeComponent();
         }
@@ -76,7 +76,7 @@ namespace Labo01
 
             ClSpecialite Spt = new ClSpecialite();
             MySqlDataReader Rs;
-            Rs = Spt.Consulter(xCode);
+            Rs = Spt.Chercher(xCode);
             DataTable dt = new DataTable();
             dt.Load(Rs);
             List_Specialite.DataSource = dt;

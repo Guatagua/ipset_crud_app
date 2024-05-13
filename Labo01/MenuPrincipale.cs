@@ -19,13 +19,19 @@ namespace Labo01
 
         private void bt_Specialite_Click(object sender, EventArgs e)
         {
-            Specialite frmSpecialite = new Specialite();
+            frmSpecialite frmSpecialite = new frmSpecialite();
             frmSpecialite.Show();
         }
 
         private void bt_Exit_Click(object sender, EventArgs e)
         {
            this.Close();
+        }
+
+        private void bt_Etudiant_Click(object sender, EventArgs e)
+        {
+            GestionEtudiant gesetud = new GestionEtudiant();
+            gesetud.Show();
         }
     }
 }

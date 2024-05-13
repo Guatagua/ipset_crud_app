@@ -15,17 +15,18 @@ namespace Labo01
     internal class ClLogin
     {
         MySqlConnection cns = new MySqlConnection("server=localhost;uid=root;pwd=root;database=clogindb");
-        public void Ajouter(string Login, string Pwd)
+        public void Ajouter(string NomComplet, string Username, string Password, string DateNaissance, string Sexe, int Mobile, string Email, string Niveau, string Specialite)
         {
             try
             {
-                string Query = "INSERT INTO tblclogin VALUES('" + Login + "','" + Pwd + "')";
+                string Query = "INSERT INTO tblclogin (nomcomplet,username,password,datenaissance,sexe,mobile,email,niveau,specialite) VALUES ('" + NomComplet + "','" + Username + "','" + Password + "','" + DateNaissance+ "','" + Sexe + "','" + Mobile + "','" + Email + "','" + Niveau + "','" + Specialite + "')";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
                 cns.Open();
                 cmd.ExecuteNonQuery();
-            }catch
+            }
+            catch
             {
                 MessageBox.Show("Opération non effectuée!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -48,11 +49,11 @@ namespace Labo01
             }
         }
 
-        public void Suppression(string Login)
+        public void Suppression(string Id)
         {
             try
             {
-                string Query = "DELETE FROM tblclogin where username='" + Login + "'";
+                string Query = "DELETE FROM tblclogin where id='" + Id + "'";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -104,11 +105,11 @@ namespace Labo01
             }
         }
 
-        public MySqlDataReader Chercher(string Login)
+        public MySqlDataReader Chercher(string Username)
         {
             try
             {
-                string Query = "SELECT * FROM tblclogin where username like '%" + Login + "%'";
+                string Query = "SELECT * FROM tblclogin where username like '%" + Username + "%'";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;

@@ -1,6 +1,6 @@
 ﻿namespace Labo01
 {
-    partial class Specialite
+    partial class frmSpecialite
     {
         /// <summary>
         /// Required designer variable.

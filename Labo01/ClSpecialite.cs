@@ -51,7 +51,7 @@ namespace Labo01
                 return null;
             }
 }
-        public MySqlDataReader Consulter(string Code)
+        public MySqlDataReader Chercher(string Code)
         {
             try
             {
