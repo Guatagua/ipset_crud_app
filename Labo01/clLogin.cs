@@ -16,7 +16,7 @@ namespace Labo01
 {
     internal class ClLogin
     {
-        string imageLocation = "";
+        //string imageLocation = "";
 
         MySqlConnection cns = new MySqlConnection("server=localhost;uid=root;pwd=root;database=clogindb");
         public void Ajouter(string NomComplet, string Username, string Password, string DateNaissance, string Sexe, string Mobile, string Email, string Niveau, string Specialite)
@@ -29,11 +29,11 @@ namespace Labo01
                 cmd.Connection = cns;
                 cns.Open();
 
-                byte[] images = null;
-                FileStream stream = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
-                BinaryReader brs = new BinaryReader(stream);
-                images = brs.ReadBytes((int)stream.Length);
-                cmd.Parameters.Add(new MySqlParameter("@image", images));
+                //byte[] images = null;
+                //FileStream stream = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
+                ///BinaryReader brs = new BinaryReader(stream);
+                //images = brs.ReadBytes((int)stream.Length);
+                //cmd.Parameters.Add(new MySqlParameter("@image", images));
 
                 cmd.ExecuteNonQuery();
             }
