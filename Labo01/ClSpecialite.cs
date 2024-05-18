@@ -32,7 +32,27 @@ namespace Labo01
            
         }
 
-        public MySqlDataReader Lister()
+        public MySqlDataReader Lister_code_specialite()
+        {
+            try
+            {
+                string Query = "SELECT (code) FROM tblcspecialite";
+                MySqlCommand cmd = new MySqlCommand(Query);
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = cns;
+                cns.Open();
+                MySqlDataReader Rs = cmd.ExecuteReader();
+                return Rs;
+
+            }
+            catch
+            {
+                MessageBox.Show("Opération non effectuée!", "Lister code specialite", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null;
+            }
+        }
+
+            public MySqlDataReader Lister()
         {
            try
             {

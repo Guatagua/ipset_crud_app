@@ -53,8 +53,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textPassword = new System.Windows.Forms.TextBox();
             this.textNomUtilisateur = new System.Windows.Forms.TextBox();
-            this.textSexe = new System.Windows.Forms.TextBox();
-            this.textDateNaissance = new System.Windows.Forms.TextBox();
+            this.optHomme = new System.Windows.Forms.RadioButton();
+            this.optFemme = new System.Windows.Forms.RadioButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.Box_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.List_Etudiant)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +77,7 @@
             this.bt_Browser.TabIndex = 1;
             this.bt_Browser.Text = "Browser";
             this.bt_Browser.UseVisualStyleBackColor = true;
+            this.bt_Browser.Click += new System.EventHandler(this.bt_Browser_Click);
             // 
             // label1
             // 
@@ -89,7 +91,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(227, 112);
+            this.label2.Location = new System.Drawing.Point(227, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 3;
@@ -134,7 +136,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(227, 134);
+            this.label7.Location = new System.Drawing.Point(227, 133);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 13);
             this.label7.TabIndex = 8;
@@ -175,20 +177,18 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "IAG",
-            "Desine"});
             this.comboBox2.Location = new System.Drawing.Point(313, 234);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(231, 21);
             this.comboBox2.TabIndex = 16;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // List_Etudiant
             // 
             this.List_Etudiant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.List_Etudiant.Location = new System.Drawing.Point(156, 310);
             this.List_Etudiant.Name = "List_Etudiant";
-            this.List_Etudiant.Size = new System.Drawing.Size(641, 138);
+            this.List_Etudiant.Size = new System.Drawing.Size(1012, 164);
             this.List_Etudiant.TabIndex = 17;
             // 
             // button1
@@ -277,27 +277,46 @@
             this.textNomUtilisateur.Size = new System.Drawing.Size(289, 20);
             this.textNomUtilisateur.TabIndex = 28;
             // 
-            // textSexe
+            // optHomme
             // 
-            this.textSexe.Location = new System.Drawing.Point(313, 131);
-            this.textSexe.Name = "textSexe";
-            this.textSexe.Size = new System.Drawing.Size(289, 20);
-            this.textSexe.TabIndex = 29;
+            this.optHomme.AutoSize = true;
+            this.optHomme.Location = new System.Drawing.Point(332, 131);
+            this.optHomme.Name = "optHomme";
+            this.optHomme.Size = new System.Drawing.Size(61, 17);
+            this.optHomme.TabIndex = 31;
+            this.optHomme.TabStop = true;
+            this.optHomme.Text = "Homme";
+            this.optHomme.UseVisualStyleBackColor = true;
             // 
-            // textDateNaissance
+            // optFemme
             // 
-            this.textDateNaissance.Location = new System.Drawing.Point(313, 105);
-            this.textDateNaissance.Name = "textDateNaissance";
-            this.textDateNaissance.Size = new System.Drawing.Size(289, 20);
-            this.textDateNaissance.TabIndex = 30;
+            this.optFemme.AutoSize = true;
+            this.optFemme.Location = new System.Drawing.Point(449, 131);
+            this.optFemme.Name = "optFemme";
+            this.optFemme.Size = new System.Drawing.Size(59, 17);
+            this.optFemme.TabIndex = 32;
+            this.optFemme.TabStop = true;
+            this.optFemme.Text = "Femme";
+            this.optFemme.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(344, 103);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 33;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // GestionEtudiant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textDateNaissance);
-            this.Controls.Add(this.textSexe);
+            this.ClientSize = new System.Drawing.Size(1180, 486);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.optFemme);
+            this.Controls.Add(this.optHomme);
             this.Controls.Add(this.textNomUtilisateur);
             this.Controls.Add(this.textPassword);
             this.Controls.Add(this.label9);
@@ -360,7 +379,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.TextBox textNomUtilisateur;
-        private System.Windows.Forms.TextBox textSexe;
-        private System.Windows.Forms.TextBox textDateNaissance;
+        private System.Windows.Forms.RadioButton optHomme;
+        private System.Windows.Forms.RadioButton optFemme;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
