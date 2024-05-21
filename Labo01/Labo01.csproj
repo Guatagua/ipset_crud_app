@@ -109,6 +109,7 @@
   <ItemGroup>
     <Compile Include="ClGroupe.cs" />
     <Compile Include="ClLogin.cs" />
+    <Compile Include="ClNiveau.cs" />
     <Compile Include="ClSpecialite.cs" />
     <Compile Include="frmGroupe.cs">
       <SubType>Form</SubType>

@@ -97,15 +97,28 @@ namespace Labo01
         {
             GetListEtudiant();
 
-            Load_tbl_Specialite_in_combobox();
+            Load_tbl_specialite_in_combobox();
             Load_tbl_groupe_in_combobox();
+            Load_tbl_niveau_in_combobox();
 
                 optHomme.Checked = true;
                 if (xSexeChecked == 2) optFemme.Checked = true;
                
         }
 
-        public void Load_tbl_Specialite_in_combobox()
+        public void Load_tbl_niveau_in_combobox()
+        {
+            ClNiveau Spt = new ClNiveau();
+            MySqlDataReader Rs;
+            Rs = Spt.Lister_code_niveau();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("niveau", typeof(string));
+            dt.Load(Rs);
+            comboBox1.ValueMember = "niveau";
+            comboBox1.DataSource = dt;
+        }
+
+        public void Load_tbl_specialite_in_combobox()
         {
             ClSpecialite Spt = new ClSpecialite();
             MySqlDataReader Rs;
