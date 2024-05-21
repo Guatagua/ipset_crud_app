@@ -33,5 +33,12 @@ namespace Labo01
             GestionEtudiant gesetud = new GestionEtudiant();
             gesetud.Show();
         }
+
+        private void bt_Groupe_Click(object sender, EventArgs e)
+        {
+            frmGroupe frmgrp = new frmGroupe();
+            frmgrp.Show();
+
+        }
     }
 }

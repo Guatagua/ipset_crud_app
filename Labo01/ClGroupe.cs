@@ -1,41 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+
 namespace Labo01
 {
-    internal class ClSpecialite
+    internal class ClGroupe
     {
+
         MySqlConnection cns = new MySqlConnection("server=localhost;uid=root;pwd=root;database=clogindb");
 
-        public void Ajouter(string Code, string Name)
-        {
-            try{
-               string Query = "INSERT INTO tblcspecialite VALUES('" + Code + "','" + Name + "')";
-               cns.Open();
-               MySqlCommand cmd = cns.CreateCommand();
-               cmd.CommandType = CommandType.Text;
-               cmd.CommandText = Query;
-               cmd.ExecuteNonQuery();
-               cns.Close();
-               MessageBox.Show("Enregistrer");
-             }
-            catch {
-                 MessageBox.Show("Erreur de connexion");
-            }
-           
-        }
-
-        public MySqlDataReader Lister_code_specialite()
+        public void Ajouter(string Code, string Groupe)
         {
             try
             {
-                string Query = "SELECT (code) FROM tblcspecialite";
+                string Query = "INSERT INTO tblcgroupe VALUES('" + Code + "','" + Groupe + "')";
+                cns.Open();
+                MySqlCommand cmd = cns.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = Query;
+                cmd.ExecuteNonQuery();
+                cns.Close();
+                MessageBox.Show("Enregistrer");
+            }
+            catch
+            {
+                MessageBox.Show("Erreur de connexion");
+            }
+
+        }
+
+        public MySqlDataReader Lister_code_groupe()
+        {
+            try
+            {
+                string Query = "SELECT (groupe) FROM tblcgroupe";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -46,35 +50,35 @@ namespace Labo01
             }
             catch
             {
-                MessageBox.Show("Opération non effectuée!", "Lister code specialite", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Opération non effectuée!", "Lister code groupe", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return null;
             }
         }
 
-            public MySqlDataReader Lister()
+        public MySqlDataReader Lister()
         {
-           try
+            try
             {
-            string Query = "SELECT * FROM tblcspecialite";
-            MySqlCommand cmd = new MySqlCommand(Query);
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cns;
-            cns.Open();
-            MySqlDataReader Rs = cmd.ExecuteReader();
-            return Rs;
+                string Query = "SELECT * FROM tblcgroupe";
+                MySqlCommand cmd = new MySqlCommand(Query);
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = cns;
+                cns.Open();
+                MySqlDataReader Rs = cmd.ExecuteReader();
+                return Rs;
 
-        }
-         catch
-         {
-             MessageBox.Show("Opération non effectuée!", "Lister", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Opération non effectuée!", "Lister", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return null;
             }
-}
+        }
         public MySqlDataReader Chercher(string Code)
         {
             try
             {
-                string Query = "SELECT * FROM tblcspecialite where code='" + Code + "'";
+                string Query = "SELECT * FROM tblcgroupe where codeGroupe='" + Code + "'";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -89,11 +93,11 @@ namespace Labo01
             }
         }
 
-        public void Modifier(string Code, string Name)
+        public void Modifier(string Code, string Groupe)
         {
             try
             {
-                string Query = "UPDATE tblcspecialite SET specialite='" + Name + "' where code='" + Code + "'";
+                string Query = "UPDATE tblcgroupe SET groupe='" + Groupe + "' where codeGroupe='" + Code + "'";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -111,7 +115,7 @@ namespace Labo01
         {
             try
             {
-                string Query = "DELETE FROM tblcspecialite where code='" + Code + "'";
+                string Query = "DELETE FROM tblcgroupe where codeGroupe='" + Code + "'";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -123,7 +127,5 @@ namespace Labo01
                 MessageBox.Show("Opération non effectuée!", "Supprimer", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-
     }
 }

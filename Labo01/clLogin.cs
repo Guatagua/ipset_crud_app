@@ -8,7 +8,6 @@ using System.Data.OleDb;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
-using Org.BouncyCastle.Utilities;
 using System.IO;
 
 
@@ -19,11 +18,11 @@ namespace Labo01
         //string imageLocation = "";
 
         MySqlConnection cns = new MySqlConnection("server=localhost;uid=root;pwd=root;database=clogindb");
-        public void Ajouter(string NomComplet, string Username, string Password, string DateNaissance, string Sexe, string Mobile, string Email, string Niveau, string Specialite)
+        public void Ajouter(string NomComplet, string Username, string Password, string DateNaissance, string Sexe, string Mobile, string Niveau, string Specialite, string Groupe)
         {
             try
             {
-                string Query = "INSERT INTO tblclogin (nomcomplet,username,password,datenaissance,sexe,mobile,email,niveau,specialite) VALUES ('" + NomComplet + "','" + Username + "','" + Password + "','" + DateNaissance+ "','" + Sexe + "','" + Mobile + "','" + Email + "','" + Niveau + "','" + Specialite + "')";
+                string Query = "INSERT INTO tblclogin (nomcomplet,username,password,datenaissance,sexe,mobile,niveau,specialite,groupe) VALUES ('" + NomComplet + "','" + Username + "','" + Password + "','" + DateNaissance+ "','" + Sexe + "','" + Mobile + "','" + Niveau + "','" + Specialite + "','" + Groupe + "')";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;

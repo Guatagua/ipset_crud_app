@@ -63,6 +63,7 @@
             this.bt_Groupe.TabIndex = 2;
             this.bt_Groupe.Text = "Groupe";
             this.bt_Groupe.UseVisualStyleBackColor = true;
+            this.bt_Groupe.Click += new System.EventHandler(this.bt_Groupe_Click);
             // 
             // bt_Matiere
             // 

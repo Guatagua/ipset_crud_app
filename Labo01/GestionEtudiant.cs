@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Crypto.Agreement.JPake;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Labo01
 {
@@ -71,25 +69,25 @@ namespace Labo01
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string xNomComplet,xUsername,xPassword, xSexe, xMobile,xEmail,xNiveau,xSpecialite;
+            string xNomComplet,xUsername,xPassword, xSexe, xMobile,xNiveau,xSpecialite,xGroupe;
             DateTime xDateNaissance;
 
             xNomComplet = textNomComplet.Text;
             xUsername = textNomUtilisateur.Text;
             xPassword = textPassword.Text;
             xMobile = textMobile.Text;
-            xEmail = textEmail.Text;
             xNiveau = comboBox1.Text;
             xSpecialite = comboBox2.Text;
+            xGroupe = combo_Box3.Text;
             xDateNaissance = dateTimePicker1.Value;
 
             if (optHomme.Checked) xSexe = "Homme";
             else xSexe = "Femme";
 
-            if (!string.IsNullOrEmpty(xNomComplet) && xUsername != "" && xPassword != "" && xMobile != ""  && xEmail != "" && xNiveau != "" && xSpecialite != "")
+            if (!string.IsNullOrEmpty(xNomComplet) && xUsername != "" && xPassword != "" && xMobile != "" && xNiveau != "" && xSpecialite != "" && xGroupe != "")
             {
                 ClLogin gesetud = new ClLogin();
-                gesetud.Ajouter(xNomComplet, xUsername, xPassword, xDateNaissance.ToShortDateString(), xSexe, xMobile, xEmail, xNiveau, xSpecialite);
+                gesetud.Ajouter(xNomComplet, xUsername, xPassword, xDateNaissance.ToShortDateString(), xSexe, xMobile, xNiveau, xSpecialite,xGroupe);
                 MessageBox.Show("Bien Ajouter");
                 GetListEtudiant();
             }
@@ -100,8 +98,9 @@ namespace Labo01
             GetListEtudiant();
 
             Load_tbl_Specialite_in_combobox();
+            Load_tbl_groupe_in_combobox();
 
-            optHomme.Checked = true;
+                optHomme.Checked = true;
                 if (xSexeChecked == 2) optFemme.Checked = true;
                
         }
@@ -116,6 +115,18 @@ namespace Labo01
             dt.Load(Rs);
             comboBox2.ValueMember = "code";
             comboBox2.DataSource = dt;
+        }
+
+        public void Load_tbl_groupe_in_combobox()
+        {
+            ClGroupe Spt = new ClGroupe();
+            MySqlDataReader Rs;
+            Rs = Spt.Lister_code_groupe();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("groupe", typeof(string));
+            dt.Load(Rs);
+            combo_Box3.ValueMember = "groupe";
+            combo_Box3.DataSource = dt;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,6 +148,11 @@ namespace Labo01
                 imageLocation = dialog.FileName.ToString();
                 Box_Picture.ImageLocation = imageLocation;
             }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

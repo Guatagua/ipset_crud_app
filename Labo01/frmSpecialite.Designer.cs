@@ -143,7 +143,7 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // Specialite
+            // frmSpecialite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,7 +160,7 @@
             this.Controls.Add(this.txt_Code);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Specialite";
+            this.Name = "frmSpecialite";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Spécialité";
             this.Load += new System.EventHandler(this.Form2_Load);

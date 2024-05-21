@@ -107,8 +107,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClGroupe.cs" />
     <Compile Include="ClLogin.cs" />
     <Compile Include="ClSpecialite.cs" />
+    <Compile Include="frmGroupe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGroupe.Designer.cs">
+      <DependentUpon>frmGroupe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +142,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmGroupe.resx">
+      <DependentUpon>frmGroupe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
