@@ -56,6 +56,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.combo_Box3 = new System.Windows.Forms.ComboBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.txt_id_mod = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Box_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.List_Etudiant)).BeginInit();
             this.SuspendLayout();
@@ -308,11 +310,30 @@
             this.combo_Box3.TabIndex = 35;
             this.combo_Box3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(683, 109);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(85, 37);
+            this.button5.TabIndex = 36;
+            this.button5.Text = "Modifier avec Id";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // txt_id_mod
+            // 
+            this.txt_id_mod.Location = new System.Drawing.Point(683, 175);
+            this.txt_id_mod.Name = "txt_id_mod";
+            this.txt_id_mod.Size = new System.Drawing.Size(85, 20);
+            this.txt_id_mod.TabIndex = 37;
+            // 
             // GestionEtudiant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 486);
+            this.Controls.Add(this.txt_id_mod);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.combo_Box3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dateTimePicker1);
@@ -381,5 +402,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox combo_Box3;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox txt_id_mod;
     }
 }

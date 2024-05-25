@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Labo01
 {
     public partial class frmLogin : Form
     {
+
+        int xLoginChecked = 1;
+
+
         public frmLogin()
         {
             InitializeComponent();
@@ -27,6 +32,8 @@ namespace Labo01
         {
             bt_Connect.ForeColor = Color.DarkRed;
             bt_Exit.ForeColor = Color.DarkRed;
+            optEtudiant.Checked = true;
+            if (xLoginChecked == 2) optAdmin.Checked = true;
         }
 
         private void bt_Connect_Click(object sender, EventArgs e)
@@ -38,10 +45,16 @@ namespace Labo01
             if(!string.IsNullOrEmpty(Login) && !string.IsNullOrEmpty(Pwd))
             {
                 ClLogin login = new ClLogin();
-                if (login.Authentification(Login, Pwd))
-                    {
+
+                if (optAdmin.Checked && login.AuthentificationEtudiant(Login, Pwd))
+                {
                     MenuPrincipale MenuP = new MenuPrincipale();
                     MenuP.Show();
+                }
+                else if (optEtudiant.Checked && login.AuthentificationAdmin(Login, Pwd))
+                {
+                    panel_etudiant pne = new panel_etudiant();
+                    pne.Show();
                 }
                 else
                 {

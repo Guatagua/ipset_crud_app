@@ -40,5 +40,12 @@ namespace Labo01
             frmgrp.Show();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Traiter trt = new Traiter();
+            trt.Show();
+
+        }
     }
 }

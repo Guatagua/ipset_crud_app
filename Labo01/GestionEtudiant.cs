@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using MySql.Data.MySqlClient;
 
 namespace Labo01
@@ -166,6 +167,30 @@ namespace Labo01
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string Id, NomComplet, Username, Password, Sexe, Mobile, Niveau, Specialite, Groupe;
+            DateTime DateNaissance;
+
+            Id = txt_id_mod.Text;
+            NomComplet = textNomComplet.Text;
+            Username = textNomUtilisateur.Text;
+            Password = textPassword.Text;
+            Mobile = textMobile.Text;
+            Niveau = comboBox1.Text;
+            Specialite = comboBox2.Text;
+            Groupe = combo_Box3.Text;
+            DateNaissance = dateTimePicker1.Value;
+
+            if (optHomme.Checked) Sexe = "Homme";
+            else Sexe = "Femme";
+
+            ClLogin Spt = new ClLogin();
+            Spt.Modifier(Id, NomComplet, Username, Password, DateNaissance.ToShortDateString(), Sexe, Mobile, Niveau, Specialite, Groupe);
+            MessageBox.Show("Bien Modifier");
+            GetListEtudiant();
         }
     }
 }

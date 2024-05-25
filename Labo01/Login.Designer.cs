@@ -36,13 +36,15 @@
             this.bt_Connect = new System.Windows.Forms.Button();
             this.bt_Exit = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.optEtudiant = new System.Windows.Forms.RadioButton();
+            this.optAdmin = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // txt_Login
             // 
             this.txt_Login.Font = new System.Drawing.Font("Tw Cen MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Login.ForeColor = System.Drawing.Color.Black;
-            this.txt_Login.Location = new System.Drawing.Point(109, 28);
+            this.txt_Login.Location = new System.Drawing.Point(130, 86);
             this.txt_Login.Name = "txt_Login";
             this.txt_Login.Size = new System.Drawing.Size(210, 28);
             this.txt_Login.TabIndex = 0;
@@ -51,7 +53,7 @@
             // 
             this.txt_PWD.Font = new System.Drawing.Font("Tw Cen MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_PWD.ForeColor = System.Drawing.Color.Black;
-            this.txt_PWD.Location = new System.Drawing.Point(109, 62);
+            this.txt_PWD.Location = new System.Drawing.Point(130, 151);
             this.txt_PWD.Name = "txt_PWD";
             this.txt_PWD.PasswordChar = '*';
             this.txt_PWD.Size = new System.Drawing.Size(210, 28);
@@ -62,7 +64,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.IndianRed;
-            this.label1.Location = new System.Drawing.Point(29, 33);
+            this.label1.Location = new System.Drawing.Point(31, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 22);
             this.label1.TabIndex = 2;
@@ -73,7 +75,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.IndianRed;
-            this.label2.Location = new System.Drawing.Point(29, 65);
+            this.label2.Location = new System.Drawing.Point(31, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 22);
             this.label2.TabIndex = 3;
@@ -83,7 +85,7 @@
             // 
             this.bt_Connect.Font = new System.Drawing.Font("Tw Cen MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Connect.ForeColor = System.Drawing.Color.IndianRed;
-            this.bt_Connect.Location = new System.Drawing.Point(122, 96);
+            this.bt_Connect.Location = new System.Drawing.Point(91, 225);
             this.bt_Connect.Name = "bt_Connect";
             this.bt_Connect.Size = new System.Drawing.Size(116, 34);
             this.bt_Connect.TabIndex = 4;
@@ -97,9 +99,9 @@
             // 
             this.bt_Exit.Font = new System.Drawing.Font("Tw Cen MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Exit.ForeColor = System.Drawing.Color.IndianRed;
-            this.bt_Exit.Location = new System.Drawing.Point(244, 96);
+            this.bt_Exit.Location = new System.Drawing.Point(239, 225);
             this.bt_Exit.Name = "bt_Exit";
-            this.bt_Exit.Size = new System.Drawing.Size(75, 34);
+            this.bt_Exit.Size = new System.Drawing.Size(116, 34);
             this.bt_Exit.TabIndex = 5;
             this.bt_Exit.Text = "Exit";
             this.bt_Exit.UseVisualStyleBackColor = true;
@@ -112,12 +114,36 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // optEtudiant
+            // 
+            this.optEtudiant.AutoSize = true;
+            this.optEtudiant.Location = new System.Drawing.Point(130, 25);
+            this.optEtudiant.Name = "optEtudiant";
+            this.optEtudiant.Size = new System.Drawing.Size(64, 17);
+            this.optEtudiant.TabIndex = 6;
+            this.optEtudiant.TabStop = true;
+            this.optEtudiant.Text = "Etudiant";
+            this.optEtudiant.UseVisualStyleBackColor = true;
+            // 
+            // optAdmin
+            // 
+            this.optAdmin.AutoSize = true;
+            this.optAdmin.Location = new System.Drawing.Point(255, 25);
+            this.optAdmin.Name = "optAdmin";
+            this.optAdmin.Size = new System.Drawing.Size(54, 17);
+            this.optAdmin.TabIndex = 7;
+            this.optAdmin.TabStop = true;
+            this.optAdmin.Text = "Admin";
+            this.optAdmin.UseVisualStyleBackColor = true;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(347, 150);
+            this.ClientSize = new System.Drawing.Size(450, 294);
+            this.Controls.Add(this.optAdmin);
+            this.Controls.Add(this.optEtudiant);
             this.Controls.Add(this.bt_Exit);
             this.Controls.Add(this.bt_Connect);
             this.Controls.Add(this.label2);
@@ -144,6 +170,8 @@
         private System.Windows.Forms.Button bt_Connect;
         private System.Windows.Forms.Button bt_Exit;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.RadioButton optEtudiant;
+        private System.Windows.Forms.RadioButton optAdmin;
     }
 }
 

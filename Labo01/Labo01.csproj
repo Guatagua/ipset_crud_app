@@ -107,10 +107,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClDemande.cs" />
     <Compile Include="ClGroupe.cs" />
     <Compile Include="ClLogin.cs" />
     <Compile Include="ClNiveau.cs" />
     <Compile Include="ClSpecialite.cs" />
+    <Compile Include="Demande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demande.Designer.cs">
+      <DependentUpon>Demande.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGroupe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,8 +148,29 @@
     <Compile Include="GestionEtudiant.Designer.cs">
       <DependentUpon>GestionEtudiant.cs</DependentUpon>
     </Compile>
+    <Compile Include="panel_etudiant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="panel_etudiant.Designer.cs">
+      <DependentUpon>panel_etudiant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Suivi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Suivi.Designer.cs">
+      <DependentUpon>Suivi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Traiter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Traiter.Designer.cs">
+      <DependentUpon>Traiter.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Demande.resx">
+      <DependentUpon>Demande.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGroupe.resx">
       <DependentUpon>frmGroupe.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +186,9 @@
     <EmbeddedResource Include="GestionEtudiant.resx">
       <DependentUpon>GestionEtudiant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="panel_etudiant.resx">
+      <DependentUpon>panel_etudiant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -167,6 +198,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Suivi.resx">
+      <DependentUpon>Suivi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Traiter.resx">
+      <DependentUpon>Traiter.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -1,26 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.OleDb;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Data.SqlClient;
-using System.IO;
 
 
 namespace Labo01
 {
-    internal class ClLogin
+    internal class ClDemande
     {
         MySqlConnection cns = new MySqlConnection("server=localhost;uid=root;pwd=root;database=clogindb");
-        public void Ajouter(string NomComplet, string Username, string Password, string DateNaissance, string Sexe, string Mobile, string Niveau, string Specialite, string Groupe)
+        public void Ajouter(string Typedemande, string Mobile_etudian, string Descdemande)
         {
             try
             {
-                string Query = "INSERT INTO tblclogin (nomcomplet,username,password,datenaissance,sexe,mobile,niveau,specialite,groupe) VALUES ('" + NomComplet + "','" + Username + "','" + Password + "','" + DateNaissance+ "','" + Sexe + "','" + Mobile + "','" + Niveau + "','" + Specialite + "','" + Groupe + "')";
+                string Query = "INSERT INTO tblcdemande (typedemande, mobiledemande, descdemande) VALUES ('" + Typedemande + "','" + Mobile_etudian + "','" + Descdemande +"')";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -33,12 +30,11 @@ namespace Labo01
                 MessageBox.Show("Opération non effectuée!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        public void Modifier(string Id, string NomComplet, string Username, string Password, string DateNaissance, string Sexe, string Mobile, string Niveau, string Specialite, string Groupe)
+        public void Modifier(string Id, string Etat)
         {
             try
             {
-                string Query = "UPDATE tblclogin SET nomcomplet= '" + NomComplet + "',username= '" + Username + "',password= '" + Password + "',datenaissance= '" + DateNaissance + "',sexe= '" + Sexe + "',mobile= '" + Mobile + "',niveau= '" + Niveau + "',specialite= '" + Specialite + "',groupe= '" + Groupe + "'  WHERE id='" + Id + "'";
+                string Query = "UPDATE tblcdemande SET etatdemande='" + Etat + "' where id_demande='" + Id + "'";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -55,7 +51,7 @@ namespace Labo01
         {
             try
             {
-                string Query = "DELETE FROM tblclogin where id='" + Id + "'";
+                string Query = "DELETE FROM tblcdemande where id_demande='" + Id + "'";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -68,12 +64,11 @@ namespace Labo01
             }
         }
 
-
         public MySqlDataReader Consulter()
         {
             try
             {
-                string Query = "SELECT * FROM tblclogin ORDER BY username";
+                string Query = "SELECT * FROM tblcdemande WHERE etatdemande LIKE 'en attente'";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -92,7 +87,7 @@ namespace Labo01
         {
             try
             {
-                string Query = "SELECT * FROM tblclogin";
+                string Query = "SELECT * FROM tblcdemande";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -107,11 +102,11 @@ namespace Labo01
             }
         }
 
-        public MySqlDataReader Chercher(string Username)
+        public MySqlDataReader Cherchermobile(string Mobiledemande)
         {
             try
             {
-                string Query = "SELECT * FROM tblclogin where username like '%" + Username + "%'";
+                string Query = "SELECT * FROM tblcdemande where mobiledemande like '%" + Mobiledemande + "%'";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -125,50 +120,8 @@ namespace Labo01
                 return null;
             }
         }
+      
 
-        public bool AuthentificationEtudiant(string Login, string Pwd)
-        {
-            try
-            {
-                bool Result = false;
-                string Query = "SELECT * FROM tblclogin WHERE username='" + Login + "' AND password='" + Pwd + "'";
-                MySqlCommand cmd = new MySqlCommand(Query);
-                cmd.CommandType = CommandType.Text;
-                cmd.Connection = cns;
-                cns.Open();
-                MySqlDataReader Rs = cmd.ExecuteReader();
-                if (Rs.HasRows) Result = true;
-                cns.Close();
-                return Result;
-            }
-            catch(Exception Ex)
-            {
-                MessageBox.Show(Ex.Message, "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;   
-            }
-        }
-
-        public bool AuthentificationAdmin(string Login, string Pwd)
-        {
-            try
-            {
-                bool Result = false;
-                string Query = "SELECT * FROM tblcloginadmin WHERE username_admin='" + Login + "' AND pass_admin='" + Pwd + "'";
-                MySqlCommand cmd = new MySqlCommand(Query);
-                cmd.CommandType = CommandType.Text;
-                cmd.Connection = cns;
-                cns.Open();
-                MySqlDataReader Rs = cmd.ExecuteReader();
-                if (Rs.HasRows) Result = true;
-                cns.Close();
-                return Result;
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message, "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
-        }
 
     }
 }

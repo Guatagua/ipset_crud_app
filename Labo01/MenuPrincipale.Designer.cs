@@ -33,6 +33,7 @@
             this.bt_Groupe = new System.Windows.Forms.Button();
             this.bt_Matiere = new System.Windows.Forms.Button();
             this.bt_Exit = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bt_Etudiant
@@ -76,7 +77,7 @@
             // 
             // bt_Exit
             // 
-            this.bt_Exit.Location = new System.Drawing.Point(349, 12);
+            this.bt_Exit.Location = new System.Drawing.Point(672, 12);
             this.bt_Exit.Name = "bt_Exit";
             this.bt_Exit.Size = new System.Drawing.Size(75, 23);
             this.bt_Exit.TabIndex = 4;
@@ -84,11 +85,22 @@
             this.bt_Exit.UseVisualStyleBackColor = true;
             this.bt_Exit.Click += new System.EventHandler(this.bt_Exit_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(462, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Traiter";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MenuPrincipale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 533);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.bt_Exit);
             this.Controls.Add(this.bt_Matiere);
             this.Controls.Add(this.bt_Groupe);
@@ -108,5 +120,6 @@
         private System.Windows.Forms.Button bt_Groupe;
         private System.Windows.Forms.Button bt_Matiere;
         private System.Windows.Forms.Button bt_Exit;
+        private System.Windows.Forms.Button button1;
     }
 }
