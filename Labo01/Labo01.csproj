@@ -110,6 +110,7 @@
     <Compile Include="ClDemande.cs" />
     <Compile Include="ClGroupe.cs" />
     <Compile Include="ClLogin.cs" />
+    <Compile Include="ClMatiere.cs" />
     <Compile Include="ClNiveau.cs" />
     <Compile Include="ClSpecialite.cs" />
     <Compile Include="Demande.cs">
@@ -135,6 +136,12 @@
     </Compile>
     <Compile Include="frmSpecialite.Designer.cs">
       <DependentUpon>frmSpecialite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Matieres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matieres.Designer.cs">
+      <DependentUpon>Matieres.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipale.cs">
       <SubType>Form</SubType>
@@ -179,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSpecialite.resx">
       <DependentUpon>frmSpecialite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matieres.resx">
+      <DependentUpon>Matieres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipale.resx">
       <DependentUpon>MenuPrincipale.cs</DependentUpon>

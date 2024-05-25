@@ -17,21 +17,21 @@ namespace Labo01
             InitializeComponent();
         }
 
-        public void loadform(object form)
+        public void loadformsuivie(object form)
         {
             if (this.mainpanel.Controls.Count > 0)
                 this.mainpanel.Controls.RemoveAt(0);
-            Form f = form as Form ;
+            Form f = form as Form;
             f.TopLevel = false;
             f.Dock = DockStyle.Fill;
             this.mainpanel.Controls.Add(f);
+            this.mainpanel.Tag = f;
+            f.Show();
         }
 
         private void panel_etudiant_Load(object sender, EventArgs e)
         {
-            //loadform(new Suivie());
-            
-
+            loadformsuivie(new Suivie());    
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -50,21 +50,22 @@ namespace Labo01
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //loadform(new Suivie());
-            Suivie sv = new Suivie();
-            sv.Show();
+            loadformsuivie(new Suivie());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //loadform(new Demande());
-            Demande sv = new Demande();
-            sv.Show();
+            loadformsuivie(new Demande());
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void mainpanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

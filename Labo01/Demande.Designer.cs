@@ -39,9 +39,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(269, 356);
+            this.button1.Location = new System.Drawing.Point(204, 420);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 40);
+            this.button1.Size = new System.Drawing.Size(195, 56);
             this.button1.TabIndex = 0;
             this.button1.Text = "Envoyer";
             this.button1.UseVisualStyleBackColor = true;
@@ -50,7 +50,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 52);
+            this.label1.Location = new System.Drawing.Point(61, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 1;
@@ -59,7 +59,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 141);
+            this.label2.Location = new System.Drawing.Point(61, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 2;
@@ -68,7 +68,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(61, 237);
+            this.label3.Location = new System.Drawing.Point(61, 232);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 13);
             this.label3.TabIndex = 3;
@@ -76,31 +76,31 @@
             // 
             // txt_type
             // 
-            this.txt_type.Location = new System.Drawing.Point(269, 49);
+            this.txt_type.Location = new System.Drawing.Point(287, 27);
             this.txt_type.Name = "txt_type";
-            this.txt_type.Size = new System.Drawing.Size(292, 20);
+            this.txt_type.Size = new System.Drawing.Size(338, 20);
             this.txt_type.TabIndex = 4;
             // 
             // txt_desc
             // 
-            this.txt_desc.Location = new System.Drawing.Point(269, 207);
+            this.txt_desc.Location = new System.Drawing.Point(287, 229);
             this.txt_desc.Name = "txt_desc";
-            this.txt_desc.Size = new System.Drawing.Size(292, 96);
+            this.txt_desc.Size = new System.Drawing.Size(338, 129);
             this.txt_desc.TabIndex = 6;
             this.txt_desc.Text = "";
             // 
             // txt_mobile
             // 
-            this.txt_mobile.Location = new System.Drawing.Point(269, 138);
+            this.txt_mobile.Location = new System.Drawing.Point(287, 122);
             this.txt_mobile.Name = "txt_mobile";
-            this.txt_mobile.Size = new System.Drawing.Size(292, 20);
+            this.txt_mobile.Size = new System.Drawing.Size(338, 20);
             this.txt_mobile.TabIndex = 5;
             // 
             // Demande
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 450);
+            this.ClientSize = new System.Drawing.Size(734, 511);
             this.Controls.Add(this.txt_desc);
             this.Controls.Add(this.txt_mobile);
             this.Controls.Add(this.txt_type);

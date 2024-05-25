@@ -16,11 +16,21 @@ namespace Labo01
         {
             InitializeComponent();
         }
+        public void loadformmenuprincipale(object form)
+        {
+            if (this.mainpanel.Controls.Count > 0)
+                this.mainpanel.Controls.RemoveAt(0);
+            Form f = form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.mainpanel.Controls.Add(f);
+            this.mainpanel.Tag = f;
+            f.Show();
+        }
 
         private void bt_Specialite_Click(object sender, EventArgs e)
         {
-            frmSpecialite frmSpecialite = new frmSpecialite();
-            frmSpecialite.Show();
+            loadformmenuprincipale(new frmSpecialite());
         }
 
         private void bt_Exit_Click(object sender, EventArgs e)
@@ -30,22 +40,27 @@ namespace Labo01
 
         private void bt_Etudiant_Click(object sender, EventArgs e)
         {
-            GestionEtudiant gesetud = new GestionEtudiant();
-            gesetud.Show();
+            loadformmenuprincipale(new GestionEtudiant());
         }
 
         private void bt_Groupe_Click(object sender, EventArgs e)
         {
-            frmGroupe frmgrp = new frmGroupe();
-            frmgrp.Show();
-
+            loadformmenuprincipale(new frmGroupe());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Traiter trt = new Traiter();
-            trt.Show();
+            loadformmenuprincipale(new Traiter());
+        }
 
+        private void bt_Matiere_Click(object sender, EventArgs e)
+        {
+            loadformmenuprincipale(new Matieres());
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

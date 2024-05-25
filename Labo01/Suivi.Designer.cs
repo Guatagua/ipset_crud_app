@@ -36,7 +36,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(138, 56);
+            this.button1.Location = new System.Drawing.Point(119, 62);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 23);
             this.button1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // txt_mobile
             // 
-            this.txt_mobile.Location = new System.Drawing.Point(374, 59);
+            this.txt_mobile.Location = new System.Drawing.Point(449, 65);
             this.txt_mobile.Name = "txt_mobile";
             this.txt_mobile.Size = new System.Drawing.Size(123, 20);
             this.txt_mobile.TabIndex = 1;
@@ -54,16 +54,16 @@
             // suivie_demande
             // 
             this.suivie_demande.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.suivie_demande.Location = new System.Drawing.Point(40, 175);
+            this.suivie_demande.Location = new System.Drawing.Point(12, 207);
             this.suivie_demande.Name = "suivie_demande";
-            this.suivie_demande.Size = new System.Drawing.Size(613, 263);
+            this.suivie_demande.Size = new System.Drawing.Size(695, 263);
             this.suivie_demande.TabIndex = 3;
             // 
             // Suivie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 450);
+            this.ClientSize = new System.Drawing.Size(734, 511);
             this.Controls.Add(this.suivie_demande);
             this.Controls.Add(this.txt_mobile);
             this.Controls.Add(this.button1);

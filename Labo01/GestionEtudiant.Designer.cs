@@ -67,6 +67,7 @@
             this.Box_Picture.Location = new System.Drawing.Point(12, 19);
             this.Box_Picture.Name = "Box_Picture";
             this.Box_Picture.Size = new System.Drawing.Size(189, 147);
+            this.Box_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Box_Picture.TabIndex = 0;
             this.Box_Picture.TabStop = false;
             // 
@@ -169,9 +170,9 @@
             // List_Etudiant
             // 
             this.List_Etudiant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.List_Etudiant.Location = new System.Drawing.Point(156, 310);
+            this.List_Etudiant.Location = new System.Drawing.Point(12, 310);
             this.List_Etudiant.Name = "List_Etudiant";
-            this.List_Etudiant.Size = new System.Drawing.Size(1012, 164);
+            this.List_Etudiant.Size = new System.Drawing.Size(893, 164);
             this.List_Etudiant.TabIndex = 17;
             // 
             // button1
@@ -193,9 +194,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 310);
+            this.button2.Location = new System.Drawing.Point(668, 237);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 23);
+            this.button2.Size = new System.Drawing.Size(118, 39);
             this.button2.TabIndex = 21;
             this.button2.Text = "Afficher";
             this.button2.UseVisualStyleBackColor = true;
@@ -203,7 +204,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 364);
+            this.button3.Location = new System.Drawing.Point(668, 153);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(118, 23);
             this.button3.TabIndex = 22;
@@ -213,7 +214,7 @@
             // 
             // textId
             // 
-            this.textId.Location = new System.Drawing.Point(12, 418);
+            this.textId.Location = new System.Drawing.Point(668, 188);
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(118, 20);
             this.textId.TabIndex = 23;
@@ -312,7 +313,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(683, 109);
+            this.button5.Location = new System.Drawing.Point(683, 62);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(85, 37);
             this.button5.TabIndex = 36;
@@ -322,7 +323,7 @@
             // 
             // txt_id_mod
             // 
-            this.txt_id_mod.Location = new System.Drawing.Point(683, 175);
+            this.txt_id_mod.Location = new System.Drawing.Point(683, 109);
             this.txt_id_mod.Name = "txt_id_mod";
             this.txt_id_mod.Size = new System.Drawing.Size(85, 20);
             this.txt_id_mod.TabIndex = 37;
@@ -331,7 +332,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1180, 486);
+            this.ClientSize = new System.Drawing.Size(934, 511);
             this.Controls.Add(this.txt_id_mod);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.combo_Box3);
