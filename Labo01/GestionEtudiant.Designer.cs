@@ -172,7 +172,7 @@
             this.List_Etudiant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.List_Etudiant.Location = new System.Drawing.Point(12, 310);
             this.List_Etudiant.Name = "List_Etudiant";
-            this.List_Etudiant.Size = new System.Drawing.Size(893, 164);
+            this.List_Etudiant.Size = new System.Drawing.Size(910, 189);
             this.List_Etudiant.TabIndex = 17;
             // 
             // button1
